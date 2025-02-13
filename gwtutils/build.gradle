@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':common-core')
+    compile project(':common-env')
+    provided gwtDev
+    compile gwtUser
+}

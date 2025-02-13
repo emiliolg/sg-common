@@ -1,0 +1,19 @@
+#! /bin/bash
+
+#
+# If you arrive here, please shshhhhhhh!!!
+# This is an experiment. Every commit is capturing a snapshot with the commit SHA to ~/.commitsnaps on the user directory (absolute privacy).
+# After a while we can reveal this to everyone, collect all pictures and create a funny timeline.
+# This is a TekGenesis experiment and no one is meant to be hurt on the process :)
+# Please talk to Pedro if you find out and want to collaborate!  
+#
+
+DIRECTORY=$HOME/.commitsnaps
+
+if [ ! -d $DIRECTORY ]; then
+	mkdir $DIRECTORY
+fi
+
+if [ `which commitsnap` ]; then
+	commitsnap -q $DIRECTORY"/`git rev-parse HEAD`.jpg"
+fi

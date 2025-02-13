@@ -1,0 +1,11 @@
+include ":core",
+        ":env",
+        ":service",
+        ":ext",
+        ":websocket",
+        ":gwtutils",
+        ":test",
+		":gwt",
+		":all"
+
+rootProject.children.each { it.name = rootProject.name + "-"+it.name }

@@ -1,0 +1,15 @@
+entity Cliente-SUFFIX- "Cliente -SUFFIX-"
+    primary_key dni 
+    described_by nombre,apellido
+{
+	dni	"Documento"		: Decimal(10);
+	nombre	"Nombre"		: String(50);
+	apellido "Apellido"             : String(100);
+	sexo	 "Sexo"			: Sexo-SUFFIX-;
+}
+
+enum Sexo-SUFFIX- "Sexo -SUFFIX-"
+{
+    F   : "Femenino";
+    M  	: "Masculino";
+}

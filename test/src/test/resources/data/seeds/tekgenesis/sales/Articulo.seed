@@ -1,0 +1,25 @@
+entity Articulo-SUFFIX- "Catálogo de los Artículos en stock -SUFFIX-"
+    primary_key estado, familia
+    described_by des1adm
+{
+	codadm  "Código de administración" : String(8), mask "XX-XXXX-XX";
+	des1adm "1ra descr. del artículo"  : String(20);
+	des2adm "2da descr. del artículo"  : String(20), optional;
+	estado  "Estado"                  : Estado-SUFFIX-;
+	familia "Familia del Articulo"     : Familia-SUFFIX-;
+}
+
+entity Familia-SUFFIX- "Familia de Artículos -SUFFIX-"
+    primary_key id
+    described_by descr
+{
+    id "Id" : Int, check id > 0;
+    name "Nombre" : String (30);
+    descr "Descripción" : String (120);
+}
+
+enum Estado-SUFFIX- "Estado del producto -SUFFIX-"
+{
+    ACTIVO       : "Activo";
+    DISCONTINUO  : "Discontinuado";
+}

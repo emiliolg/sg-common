@@ -1,0 +1,10 @@
+dependencies {
+    compile project(':common-core')
+    compile project(':common-env')
+    compile jackson
+    compile jacksonDataBind
+    compile rxJava
+    compile javaxInject
+    compile jetty
+    testCompile simpleFramework
+}

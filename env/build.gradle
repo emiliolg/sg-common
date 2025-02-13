@@ -1,0 +1,10 @@
+dependencies {
+    compile project(':common-core')
+    compile javaxInject
+    compile logback_core
+    compile logback_classic
+    compile logback_gelf
+    compile slf4j
+    compile jul_to_slf4j
+    compile apacheShiro
+}

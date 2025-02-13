@@ -1,0 +1,12 @@
+dependencies {
+    compile project(':common-ext')
+    compile project(':common-service')
+    compile project(':common-core')
+    compile logback_core
+    compile logback_classic
+    compile assertj
+    compile junit
+    compile rxNetty
+    // Remove simple framework dependency with MockServer deprecation
+    compile simpleFramework
+}

@@ -1,0 +1,8 @@
+dependencies {
+    compile project(':common-core')
+    compile project(':common-env')
+    compile project(':common-service')
+    compile rxJava
+    testCompile project(':common-test')
+    testCompile simpleFramework
+}

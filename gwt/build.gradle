@@ -1,0 +1,19 @@
+task gwtJar(type: Jar) {
+    from "../core/src/main/java"
+    include "**/*.java"
+    include "**/*.gwt.xml"
+    archiveName 'common-'+ project.name + '-gwt.jar'
+}
+
+
+publishing {
+    publications {
+        publishGWTJAr(MavenPublication) {
+            artifactId 'common-core-gwt'
+            artifact gwtJar
+        }
+    }
+    repositories {
+        add project.repositories.tekgenRepo
+    }
+}

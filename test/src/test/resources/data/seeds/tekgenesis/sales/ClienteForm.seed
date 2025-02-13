@@ -1,0 +1,6 @@
+form ClienteForm-SUFFIX- "Cliente -SUFFIX-"
+{
+	dni	"Documento"		: Decimal(10);
+	nombre	"Nombre"		: String(50);
+	apellido  : String(100);
+}

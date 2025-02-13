@@ -1,0 +1,8 @@
+dependencies {
+    compile project(':common-core')
+    compile project(':common-service')
+    compile (webSocketClient) { exclude group: 'org.slf4j', module: 'slf4j-simple'}
+    compile asyncHttpClient
+    compile jackson
+    compile jacksonDataBind
+}

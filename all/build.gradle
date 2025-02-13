@@ -1,0 +1,7 @@
+dependencies {
+    compile project(':common-core')
+    compile project(':common-env')
+    compile project(':common-ext')
+    compile project(':common-gwtutils')
+    compile project(':common-websocket')
+}

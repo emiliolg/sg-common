@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.8.0//EN"
+        "http://gwtproject.org/doctype/2.8.0/gwt-module.dtd">
+
+<module rename-to="common">
+    <source path="common">
+        <exclude name="/util/"/>
+        <exclude name="/metric/"/>
+        <exclude name="/collections/ext/"/>
+        <exclude name="/exception/ApplicationException.java"/>
+        <exclude name="/logging/LoggableInstance.java"/>
+    </source>
+    <super-source path="gwtonly"/>
+</module>

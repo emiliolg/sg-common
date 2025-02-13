@@ -1,0 +1,42 @@
+#! /bin/bash
+
+#
+# Get the list of files from the stage area
+#
+JAVA_FILES=$(git diff --cached --diff-filter=AM --name-only HEAD | grep -e ".java\$")
+
+if [ -n "$JAVA_FILES" ]
+then
+   jalopy --force $JAVA_FILES || exit 1
+
+# add again the formatted files
+
+   git add $JAVA_FILES
+fi
+
+PROPERTY_FILES=$(git diff --cached --diff-filter=AM --name-only HEAD | grep -e ".properties\$")
+if [ -n "$PROPERTY_FILES" ]
+then
+	WRONG_FILES=$(file --mime-encoding  $PROPERTY_FILES | grep -v -e us-ascii -e iso-8859-1 2>&1) 
+	if [ "$WRONG_FILES" ] 
+	then
+		printf "$WRONG_FILES\n\nThou shalt use ISO for properties!!\n\nYou must have a Teflon brain, because nothing sticks." |
+			cowsay -d -W 80
+		exit 1
+	fi
+fi
+
+SQL_FILES=$(git diff --cached --diff-filter=AM --name-only HEAD | grep -e ".sql\$")
+if [ -n "$SQL_FILES" ]
+then
+for FILE in $SQL_FILES ; do
+    # Check if the file contains 'debugger'
+    if grep @Generated "$FILE" 
+    then
+        echo $FILE ' contains @Generated! Please verify DB evolution and remove the annotation'
+        exit 1
+    fi
+done
+fi
+exit 
+
