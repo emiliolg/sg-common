@@ -1,11 +1,11 @@
-include ":core",
-        ":env",
-        ":service",
-        ":ext",
-        ":websocket",
-        ":gwtutils",
-        ":test",
-		":gwt",
-		":all"
+include ":common-core",
+        ":common-env",
+        ":common-service",
+        ":common-ext",
+        ":common-websocket",
+        ":common-gwtutils",
+        ":common-test",
+		":common-gwt",
+		":common-all"
 
-rootProject.children.each { it.name = rootProject.name + "-"+it.name }
+// rootProject.children.each { it.name = rootProject.name + "-"+it.name }
